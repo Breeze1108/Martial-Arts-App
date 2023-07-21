@@ -2,7 +2,7 @@ import { StyleSheet, View, Text } from "react-native";
 import React, { Component } from "react";
 import CalendarPicker from "react-native-calendar-picker";
 
-export default class App extends Component {
+export default class ScheduleScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {

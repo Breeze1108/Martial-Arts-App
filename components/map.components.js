@@ -8,6 +8,8 @@ export default function Map() {
         zoom: 13,
         mapTypeControl: false,
       });
+
+      
     
       // Add controls to the map, allowing users to hide/show features.
       const styleControl = document.getElementById("style-selector-control");

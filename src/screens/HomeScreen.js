@@ -217,7 +217,7 @@ export default function Home({ navigation }) {
           }}
         >
           <View>
-            <Text>Won Brazilian Jiu Jitsu</Text>
+            <Text>Won Brazilian Jiu-Jitsu</Text>
             {/* <Image /> */}
           </View>
         </Marker>
