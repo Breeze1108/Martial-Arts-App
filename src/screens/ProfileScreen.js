@@ -1,18 +1,18 @@
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import React, {useEffect, useState} from "react";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
 
 export default function ProfileScreen({ navigation }) {
   const [show, setShow] = useState(false);
   return (
       <View style={styles.container}>
         <View style={styles.editbar}>
-            <Image onPress={() => {
+          <Pressable onPress={() => {
             navigation.navigate("EditProfile");
-          }}
+          }}>
+            <Image
             style={styles.edit}
             source={require('../../assets/edit-button.png')}/>
+          </Pressable>
         </View>
         <Image
           style={styles.img}
@@ -41,15 +41,14 @@ const styles = StyleSheet.create({
     borderColor: "gray",
   },
   editbar: {
-    backgroundColor: "red",
+    backgroundColor: "white",
     height: 50,
     width: 420,
-    justifyContent: "flex-end"
-
   },
   edit: {
     height: 50,
     width: 50,
+    alignSelf: 'flex-end'
   },
   name: {
     fontSize: 60,
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
   },
   bio: {
     width: 400,
-    height: 375,
+    height: 330,
     borderWidth: 3,
     borderRadius: 5,
   },
