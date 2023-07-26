@@ -34,10 +34,12 @@ export default function ProfileScreen({ navigation }) {
           <Text style={styles.ma}>Boxing</Text>
         </View>
       </View>
+
       <View style={styles.expContainer}>
         <Text style={styles.exp}>7 Years of experience</Text>
       </View>
-      <View style={styles.descr}>
+  
+      <View style={styles.bioContainer}>
         <Text style={styles.bio}>Bio </Text>
       </View>
     </View>
@@ -62,14 +64,12 @@ const styles = StyleSheet.create({
     width: 50,
     alignSelf: "flex-end",
   },
-  name: {
-    fontFamily: "workSans",
-    fontSize: 20,
-    fontStyle: "normal",
-    fontWeight: 500,
-    lineHeight: 24,
-    letterSpacing: 0.2,
-    color: "#AFB1B6",
+  img: {
+    width: 200,
+    height: 200,
+    borderRadius: 200,
+    marginTop: 30,
+    paddingTop: 200,
   },
   nameContainer: {
     display: "flex",
@@ -85,21 +85,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: "#AFB1B6",
   },
-  expContainer: {
-    display: "flex",
-    width: 340,
-    height: 64,
-    paddingVertical: 13,
-    paddingHorizontal: 12,
-    alignItems: "center",
-    gap: 10,
-    flexShrink: 0,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "#AFB1B6",
-  },
-  exp: {
+  name: {
     fontFamily: "workSans",
     fontSize: 20,
     fontStyle: "normal",
@@ -107,13 +93,6 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     letterSpacing: 0.2,
     color: "#AFB1B6",
-  },
-  img: {
-    width: 200,
-    height: 200,
-    borderRadius: 200,
-    marginTop: 30,
-    paddingTop: 200,
   },
   info: {
     flexDirection: "row",
@@ -127,16 +106,15 @@ const styles = StyleSheet.create({
     display: "flex",
     width: 150,
     height: 64,
-    padding: 13,
-    paddingVertical: 12,
-    alignItems: "center",
+    paddingVertical: 13,
+    paddingHorizontal: 12,
+    justifyContent: "center",
     gap: 10,
     flexShrink: 0,
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "#AFB1B6",
-    fontSize: 16,
   },
   age: {
     fontFamily: "workSans",
@@ -151,9 +129,9 @@ const styles = StyleSheet.create({
     display: "flex",
     width: 150,
     height: 64,
-    padding: 13,
     paddingVertical: 13,
-    alignItems: "center",
+    paddingHorizontal: 12,
+    justifyContent: "center",
     gap: 10,
     flexShrink: 0,
     borderRadius: 10,
@@ -170,7 +148,23 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     color: "#AFB1B6",
   },
-  bio: {
+  expContainer: {
+    display: "flex",
+    width: 340,
+    height: 64,
+    paddingVertical: 13,
+    paddingHorizontal: 12,
+    justifyContent: "center",
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "#AFB1B6",
+    marginTop: 20,
+    marginBottom: 20
+  },
+  exp: {
     fontFamily: "workSans",
     fontSize: 20,
     fontStyle: "normal",
@@ -179,18 +173,28 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     color: "#AFB1B6",
   },
-  descr: {
+  bioContainer: {
     display: "flex",
     width: 340,
-    height: 165,
+    height: 200,
+    paddingVertical: 13,
     paddingHorizontal: 12,
-    alignItems: "flexStart",
     gap: 10,
     flexShrink: 0,
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "#AFB1B6",
-    color: "red",
+    flexDirection: "row"
+  },
+  bio: {
+    fontFamily: "workSans",
+    fontSize: 20,
+    fontStyle: "normal",
+    fontWeight: 500,
+    lineHeight: 24,
+    letterSpacing: 0.2,
+    color: "#AFB1B6",
+    alignSelf: "flex-start"
   },
 });
