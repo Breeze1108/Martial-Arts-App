@@ -5,11 +5,10 @@ export default function WorkoutsScreen ({ navigation }) {
     const [show, setShow] = useState(false);
     return (
         <View>
-            <Text>Workout Screen</Text>
             <Pressable onPress={() => {
             navigation.navigate("Punch");
           }}>
-            <Text style={styles.punch}>Boxing Workout</Text>
+            <Text style={styles.punch}>Box Workout</Text>
             </Pressable>
             <Pressable onPress={() => {
             navigation.navigate("Kick");
@@ -23,8 +22,36 @@ export default function WorkoutsScreen ({ navigation }) {
 const styles = StyleSheet.create({
     punch: {
         fontSize:50,
+        display: "flex",
+        width: 380,
+        height: 180,
+        paddingVertical: 13,
+        paddingHorizontal: 12,
+        justifyContent: "center",
+        gap: 10,
+        flexShrink: 0,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#AFB1B6",
+        alignSelf: "center",
+        marginVertical: 150,
+        textAlignVertical: "center"
     },
     kick: {
-        fontSize: 50
+        fontSize: 50,
+        display: "flex",
+        width: 380,
+        height: 180,
+        paddingVertical: 13,
+        paddingHorizontal: 12,
+        justifyContent: "center",
+        gap: 10,
+        flexShrink: 0,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: "#AFB1B6",
+        alignSelf: "center"
     }
 });
