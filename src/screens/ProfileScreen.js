@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function ProfileScreen({ navigation }) {
   const [show, setShow] = useState(false);
@@ -11,18 +12,11 @@ export default function ProfileScreen({ navigation }) {
             navigation.navigate("EditProfile");
           }}
         >
-          <Image
-            style={styles.edit}
-            source={require("../../assets/edit-button.png")}
-          />
+          <Ionicons name="pencil" size={50} color='lightgrey' style={styles.edit}/>
         </Pressable>
       </View>
-      <Image
-        style={styles.img}
-        source={{
-          uri: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg",
-        }}
-      />
+      <Ionicons name="person" size={140} color='lightgrey' />
+      {/* <Image style={styles.img} source={{uri:"https://globalnews.ca/wp-content/uploads/2017/05/oldestmanthumb.jpg?quality=85&strip=all"}} /> */}
       <View style={styles.nameContainer}>
         <Text style={styles.name}>Fabrizio Bernal</Text>
       </View>
@@ -38,7 +32,7 @@ export default function ProfileScreen({ navigation }) {
       <View style={styles.expContainer}>
         <Text style={styles.exp}>7 Years of experience</Text>
       </View>
-  
+
       <View style={styles.bioContainer}>
         <Text style={styles.bio}>Bio </Text>
       </View>
@@ -65,11 +59,12 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
   img: {
-    width: 200,
-    height: 200,
-    borderRadius: 200,
+    width: 100,
+    height: 100,
+    height: "auto",
     marginTop: 30,
     paddingTop: 200,
+    borderRadius:50,
   },
   nameContainer: {
     display: "flex",
@@ -162,7 +157,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: "#AFB1B6",
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
   },
   exp: {
     fontFamily: "workSans",
@@ -185,7 +180,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "#AFB1B6",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   bio: {
     fontFamily: "workSans",
@@ -195,6 +190,6 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     letterSpacing: 0.2,
     color: "#AFB1B6",
-    alignSelf: "flex-start"
+    alignSelf: "flex-start",
   },
 });
