@@ -22,8 +22,11 @@ export default function ProfileScreen({ navigation }) {
         />
         <Text style={styles.name}>Name</Text>
         <View style={styles.info}>
-          <Text style={styles.exp}>10 Years</Text>
-          <Text style={styles.ma}>Taekwondo</Text>
+          <Text style={styles.age}>17 Years Old</Text>
+          <Text style={styles.ma}>Boxing</Text>
+        </View>
+        <View>
+          <Text style={styles.exp}>7 Years of experience</Text>
         </View>
         <View style={styles.bio}>
           <Text style={styles.descr}>Bio </Text>
@@ -51,8 +54,32 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end'
   },
   name: {
-    fontSize: 60,
-    marginTop: 10,
+    display: 'flex',
+    width: 340,
+    height: 64,
+    padding: 13,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1, 
+    borderStyle:'solid',
+    borderColor: '#AFB1B6'
+  },
+  exp: {
+    display: 'flex',
+    width: 340,
+    height: 64,
+    padding: 13,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1, 
+    borderStyle:'solid',
+    borderColor: '#AFB1B6'
   },
   img: {
     width: 200,
@@ -62,30 +89,57 @@ const styles = StyleSheet.create({
     paddingTop: 200,
   },
   info: {
-    justifyContent: "space-around",
     flexDirection: "row",
     backgroundColor: "white",
-    width: 400,
+    width: 340,
+    alignContent: 'center',
+    justifyContent: "space-between"
   },
-  exp: {
-    fontSize: 40,
-    borderWidth: 3,
-    borderRadius: 5,
-    paddingHorizontal: 10,
+  age: {
+    display: 'flex',
+    width: 150,
+    height: 64,
+    padding: 13,
+    paddingVertical: 12,
+    alignItems: 'center',
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1, 
+    borderStyle:'solid',
+    borderColor: '#AFB1B6',
+    fontSize: 16,
   },
   ma: {
-    fontSize: 40,
-    borderWidth: 3,
-    borderRadius: 5,
-    paddingHorizontal: 10,
+    display: 'flex',
+    width: 150,
+    height: 64,
+    padding: 13,
+    paddingVertical: 12,
+    alignItems: 'center',
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1, 
+    borderStyle:'solid',
+    borderColor: '#AFB1B6'
   },
   bio: {
-    width: 400,
-    height: 330,
-    borderWidth: 3,
-    borderRadius: 5,
+   
   },
   descr: {
-    fontSize: 30,
+    display: 'flex',
+    width: 340,
+    height: 165,
+    paddingVertical: 13,
+    paddingHorizontal: 12,
+    alignItems: 'flexStart',
+    gap: 10,
+    flexShrink: 0,
+    borderRadius: 10,
+    borderWidth: 1, 
+    borderStyle:'solid',
+    borderColor: '#AFB1B6'
+
   },
 });

@@ -1,72 +1,65 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, View, Text, Button, Image } from "react-native";
-import { Camera } from 'expo-camera';
-import {Video} from 'expo-av';
+import { Camera, CameraType } from 'expo-camera';
+import { Button, StyleSheet, Text, TouchableOpacity, View, Image, Pressable } from 'react-native';
 
 export default function PunchScreen() {
-  
-  const [hasAudioPermission, setHasAudioPermission] = useState(null);
-  const [hasCameraPermission, setHasCameraPermission] = useState(null);
-  const [camera, setCamera] = useState(null);
-  const [record, setRecord] = useState(null);
-  const [type,setType] = useState(Camera.Constants.Type.back);
-  const video = React.useRef(null);
-  const [status, setStatus] = React.useState({});
+  const [type, setType] = useState(CameraType.back);
+  const [permission, requestPermission] = Camera.useCameraPermissions();
 
-  useEffect (() => {
-    (async () => {
-      const cameraStatus = await Camera.requestCameraPermissionsAsync();
-      setHasCameraPermission(cameraStatus.status === 'granted');
-
-      const audioStatus = await Camera.requestMicrophonePermissionsAsync();
-      setHasAudioPermission(audioStatus.status === 'granted');
-    })();
-  },  []);
-  if (hasCameraPermission === null || hasAudioPermission === null){
+  if (!permission) {
+    // Camera permissions are still loading
     return <View />;
   }
 
-  if (hasCameraPermission === false || hasAudioPermission === false){
-    return <Text>No access to camera</Text>
+  if (!permission.granted) {
+    // Camera permissions are not granted yet
+    return (
+      <View style={styles.container}>
+        <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
+        <Button onPress={requestPermission} title="grant permission" />
+      </View>
+    );
+  }
+
+  function toggleCameraType() {
+    setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
   }
 
   return (
-    <View style = {{flex:1}}>
-      <View style={styles.cameraContainer}>
-        <Camera
-        ref ={ref =>setCamera(ref)}
-        style = {styles.fixedRatio}
-        type = {type}
-        ratio = {'4:3'} />
+    <View style={styles.container}>
+      <Camera style={styles.camera} type={type}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
+            <Text style={styles.text}>Flip Camera</Text>
+          </TouchableOpacity>
         </View>
-        
-         <Video
-      ref ={video}
-      style={styles.video}
-      source ={{uri: record,}}
-      useNativeControls
-      resizeMode='contain'
-      isLooping
-      onPlaybackStatusUpdate={status => setStatus(()=>status)}/>
-      </View>
-  )
-  }
-const styles = StyleSheet.create ({
-    container: {
-        flex: 1,
-        backgroundColor: "white",
-        alignItems: "center",
-        justifyContent: "top",
-        borderWidth: 0,
-        borderColor: "gray",
-      },
-      fixedRatio: {
-        flex:1,
-        aspectRatio:1
-      },
-      video:{
-        alignSelf: 'center',
-        width:350,
-        height: 220,
-      },
-    });
+      </Camera>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+});

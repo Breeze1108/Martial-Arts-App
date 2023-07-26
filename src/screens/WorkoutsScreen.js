@@ -11,7 +11,11 @@ export default function WorkoutsScreen ({ navigation }) {
           }}>
             <Text style={styles.punch}>Boxing Workout</Text>
             </Pressable>
+            <Pressable onPress={() => {
+            navigation.navigate("Kick");
+          }}>
             <Text style={styles.kick}>Kick Workout</Text>
+            </Pressable>
         </View>
 
     )
