@@ -7,7 +7,7 @@ export default function ProfileScreen({ navigation }) {
   return (
    <ScrollView>
     <View style={styles.container}>
-      <Ionicons name="person" size={140} color='lightgrey' style={styles.pfp} />
+      <Ionicons name="person" size={140} color='#BE3232' style={styles.pfp} />
       <View style={styles.nameContainer}>
         <TextInput style={styles.name}>Fabrizio Bernal</TextInput>
       </View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "#AFB1B6",
+    borderColor: "black",
   },
   name: {
     fontFamily: "workSans",
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "#AFB1B6",
+    borderColor: "black",
   },
   age: {
     fontFamily: "workSans",
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "#AFB1B6",
+    borderColor: "black",
   },
   ma: {
     fontFamily: "workSans",
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "#AFB1B6",
+    borderColor: "black",
     marginTop: 20,
     marginBottom: 20,
   },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "#AFB1B6",
+    borderColor: "black",
     paddingHorizontal: 12
   },
   bio: {
@@ -164,5 +164,6 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     letterSpacing: 0.2,
     color: "#AFB1B6",
+    alignSelf: 'flex-start'
   },
 });
