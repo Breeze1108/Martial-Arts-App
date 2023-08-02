@@ -24,18 +24,22 @@ export default function Home({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.view}>
       {userPost?.map((post) => (
         <Card style={styles.card}>
           <Text>{post.username}</Text>
           <Text>{post.caption}</Text>
           <Image
-        style={styles.tinyLogo}
+        style={styles.cardimg}
         source={{
           uri: post.image,
         }}
       />
+      <Text>{post.likes}</Text>
+      <Text>Comment</Text>
         </Card>
       ))}
+      </View>
     </ScrollView>
   );
 }
@@ -44,12 +48,19 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 120,
   },
+  view:{
+    justifyContent: "space-around"
+  },
   card: {
     width: 320,
+    height: 420,
     alignSelf: "center",
+    marginTop:20,
   },
   cardimg: {
     alignSelf: "center",
     width: 280,
+    height: 280,
+
   },
 });
