@@ -7,7 +7,7 @@ import BlockScreen from "../screens/BlockScreen";
 const Stack = createStackNavigator();
 export default function WorkoutsStack() {
   return (
-    <Stack.Navigator initialRouteName="Workout">
+    <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Workout">
       <Stack.Screen name="Workout" component={WorkoutsScreen} />
       <Stack.Screen name="Punch" component={PunchScreen} />
       <Stack.Screen name="Kick" component={KickScreen}/>

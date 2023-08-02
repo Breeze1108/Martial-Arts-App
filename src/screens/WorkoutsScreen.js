@@ -9,6 +9,7 @@ export default function WorkoutsScreen ({ navigation }) {
             <Pressable onPress={() => {
             navigation.navigate("Punch");
           }}>
+            <Text style={styles.boxingtext}>Boxing</Text>
             <Image source={require('../../assets/boxing.jpeg')}style={{width:350, height: 200, borderRadius: 30,}}></Image>
             </Pressable>
             <Pressable onPress={() => {

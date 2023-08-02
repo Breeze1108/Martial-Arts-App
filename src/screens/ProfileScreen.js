@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
   editbar: {
+    marginTop: 30,
     backgroundColor: "white",
     height: 50,
     width: 420,
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     alignSelf: "flex-end",
+    marginRight: 20,
   },
   img: {
     width: 100,
