@@ -5,19 +5,35 @@ import GymStack from "./ProfileStack";
 import ProfileScreen from "../screens/ProfileScreen";
 import WorkoutsScreen from "../screens/WorkoutsScreen";
 import WorkoutsStack from "./WorkoutStack";
-import  MaterialCommunityIcons  from 
-'react-native-vector-icons/MaterialCommunityIcons';
-import { NavigationContainer } from "@react-navigation/native";
-
+import { Icon } from 'react-native-elements';
 const Tab = createBottomTabNavigator();
 export default function RootNavigation() {
   return (
-      <Tab.Navigator
-       labeled={false} barStyle={{ backgroundColor: 'black' }} 
-      activeColor="white" 
-  
-        initialRouteName="Home"
-      >
+    <Tab.Navigator
+    initialRouteName="Home"
+    screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarStyle: { backgroundColor: 'black', height: 80, borderRadius: 15, },
+        tabBarIcon: ({ color, size }) => {
+            let iconName;
+            if (route.name === 'Home') {
+                iconName = 'home'; // Change this to the name of the icon you want to use for the Home tab
+            } else if (route.name === 'Workout') {
+                iconName = ''; // Change this to the name of the icon you want to use for the LoadScreen tab
+            } else if (route.name === 'Profile') {
+                iconName = 'user'; // Change this to the name of the icon you want to use for the Profile tab
+              } else if (route.name === '+') {
+                iconName = 'upload';
+            }
+            return <Icon type="font-awesome" name={iconName} size={40} color={color} marginTop={15} />;
+        },
+    })}
+    tabBarOptions={{
+        activeTintColor: '#BE3232', // Change the color for the active tab
+        inactiveTintColor: 'white', // Change the color for the inactive tabs
+        showLabel: false,
+    }}
+>
         <Tab.Screen
           name="Workout"
           component={WorkoutsStack}

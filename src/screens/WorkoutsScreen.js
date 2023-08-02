@@ -1,5 +1,6 @@
-import { View, Image, Text, Pressable, StyleSheet } from "react-native";
+import { View, Image, Text, Pressable, StyleSheet, ScrollView } from "react-native";
 import React, {useState, useEffect} from 'react';
+
 
 export default function WorkoutsScreen ({ navigation }) {
     const [show, setShow] = useState(false);
