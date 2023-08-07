@@ -2,6 +2,12 @@ import React, {useState, useEffect} from 'react';
 import { Camera, CameraType } from 'expo-camera';
 import { Button, StyleSheet, Text, TouchableOpacity, View, Image, Pressable } from 'react-native';
 
+// import ReactDOM from 'react-dom';
+import LoadAndRunModel from '../../components/AiModel'; // update the path as per your project structure
+
+
+
+// ReactDOM.render(<App />, document.getElementById('root'));
 export default function PunchScreen() {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
@@ -30,6 +36,7 @@ export default function PunchScreen() {
       <Camera style={styles.camera} type={type}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
+          <LoadAndRunModel />
             <Text style={styles.text}>Flip Camera</Text>
           </TouchableOpacity>
         </View>
